@@ -1,0 +1,69 @@
+/* Shorts in the sidebar (full and collapsed) */
+html[ydc-shorts] ytd-guide-entry-renderer:has(a[title="Shorts"]),
+html[ydc-shorts] ytd-guide-entry-renderer:has(a[href^="/shorts"]),
+html[ydc-shorts] ytd-mini-guide-entry-renderer:has(a[href^="/shorts"]) {
+  display: none !important;
+}
+
+/* Shorts shelves in search, subscriptions and channel pages */
+html[ydc-shorts] ytd-reel-shelf-renderer,
+html[ydc-shorts] ytd-rich-shelf-renderer[is-shorts],
+html[ydc-shorts] ytd-rich-section-renderer:has(ytd-rich-shelf-renderer[is-shorts]),
+html[ydc-shorts] grid-shelf-view-model:has(a[href^="/shorts/"]) {
+  display: none !important;
+}
+
+/* Home page recommendations, including the topic chips, and the hover preview
+   player, which lives outside the grid and would otherwise float over the blank page */
+html[ydc-home-feed] ytd-browse[page-subtype="home"] ytd-rich-grid-renderer,
+html[ydc-home-feed] ytd-app:has(ytd-browse[page-subtype="home"]:not([hidden])) #video-preview {
+  display: none !important;
+}
+
+/* Home in the sidebar (full and collapsed) */
+html[ydc-home-button] ytd-guide-entry-renderer:has(a[href="/"]),
+html[ydc-home-button] ytd-mini-guide-entry-renderer:has(a[href="/"]) {
+  display: none !important;
+}
+
+/* Recommendations beside a video. Only #related, so playlists and live chat stay. */
+html[ydc-related] ytd-watch-flexy #related {
+  display: none !important;
+}
+
+/* Drop the empty right column so the video centers. It comes back for a playlist,
+   live chat or an open panel like the transcript, but not for a sponsored panel. */
+html[ydc-related] ytd-watch-flexy[is-two-columns_]:not(:has(
+  #playlist:not([hidden]),
+  #chat-container #chat:not([hidden]),
+  ytd-engagement-panel-section-list-renderer[visibility="ENGAGEMENT_PANEL_VISIBILITY_EXPANDED"]:not([target-id="engagement-panel-ads"])
+)) #secondary {
+  display: none !important;
+}
+
+/* Comments under a video */
+html[ydc-comments] ytd-watch-flexy ytd-comments {
+  display: none !important;
+}
+
+/* End cards and the video wall when a video ends, including the fullscreen grid */
+html[ydc-end-screen] .html5-endscreen,
+html[ydc-end-screen] .ytp-ce-element,
+html[ydc-end-screen] .ytp-fullscreen-grid {
+  display: none !important;
+}
+
+/* The Most relevant shelf at the top of Subscriptions */
+html[ydc-most-relevant] ytd-browse[page-subtype="subscriptions"] ytd-rich-section-renderer:has(ytd-rich-shelf-renderer:not([is-shorts])) {
+  display: none !important;
+}
+
+/* The Explore and More from YouTube sections of the sidebar */
+html[ydc-sidebar-extras] ytd-guide-section-renderer:has(a[href="/gaming"], a[href="/premium"]) {
+  display: none !important;
+}
+
+/* Notification bell in the top bar */
+html[ydc-notifications] ytd-notification-topbar-button-renderer {
+  display: none !important;
+}

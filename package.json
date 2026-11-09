@@ -1,0 +1,15 @@
+{
+  "name": "youtube-declutter",
+  "version": "1.5.1",
+  "private": true,
+  "description": "Chrome extension that hides the distracting parts of YouTube: Shorts, recommendations, comments and more.",
+  "license": "MIT",
+  "type": "module",
+  "scripts": {
+    "test": "node --test",
+    "check": "node --check content.js && node --check settings.js && node --check popup.js && node --test"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}
